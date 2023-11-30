@@ -17,7 +17,7 @@ console.log("AREA DEL RETTANGOLO =", rettangolo(10, 5));
 const crazySum = function (n1 = 0, n2 = 0) {
   if (n1 !== n2) {
     return n1 + n2;
-  } else if (n1 === n2) {
+  } else {
     return (n1 + n2) * 3;
   }
 };
@@ -32,18 +32,25 @@ console.log("IL TOTALE DI CRAZYSUM è:", crazySum(1, 3));
 const crazyDiff = function (n = 0) {
   if (n < 19) {
     return n - 19;
-  } else if (n > 19) {
+  } else {
     return (n - 19) * 3;
   }
 };
-console.log("LA DIFFERENZA DI CRAZYDIFF è:", crazyDiff(9));
+console.log("LA DIFFERENZA DI CRAZYDIFF è:", crazyDiff(20));
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
  se n è uguale a 400.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const boundary = function (n = 0) {
+  if ((n % 1 === 0 && n > 20 && n <= 100) || n === 400) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log("BOUNDARY è:", boundary(400));
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
  La funzione deve aggiungere la parola "EPICODE" all'inizio della stringa fornita, ma se la stringa fornita comincia già con "EPICODE" allora deve
@@ -51,27 +58,52 @@ console.log("LA DIFFERENZA DI CRAZYDIFF è:", crazyDiff(9));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const epify = function (stringa) {
+  if (stringa.startsWith("EPICODE")) {
+    return stringa;
+  } else {
+    return "EPICODE," + stringa;
+  }
+};
+console.log("BOUNDARY è:", epify(" " + "FIGO MA IMPEGNATIVO"));
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const check3and7 = function (positivo) {
+  if ((positivo > 0 && positivo % 3 === 0) || positivo % 7 === 0) {
+    return true;
+  } else return false;
+};
+console.log("check3and7:", check3and7(12));
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const reverseString = function (stringa) {
+  return stringa.split("").reverse().join("");
+};
+console.log("LA STRINGA INVERITA è:", reverseString("EPICODE"));
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const upperFirst = function (upper) {
+  let uppers = upper.split(" ");
+  for (let i = 0; i < uppers.length; i++) {
+    uppers[i] = uppers[i].charAt(0).toUpperCase() + uppers[i].slice(1);
+  }
+  return uppers.join(" ");
+};
+console.log(
+  "LE PRIME LETTERE DIVENTANO MAIUSCOLE:",
+  upperFirst("ciao che fai oggi")
+);
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
