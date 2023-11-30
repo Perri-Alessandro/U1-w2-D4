@@ -110,7 +110,13 @@ console.log(
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const cutString = function (cut) {
+  return cut.slice(1, -1); // Restituisce una sottostringa escludendo il primo e l'ultimo carattere
+};
+console.log(
+  "STRINGA SENZA PRIMO E ULTIMO CARATTERE:",
+  cutString("ciao che fai")
+);
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
