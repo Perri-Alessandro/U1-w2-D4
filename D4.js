@@ -120,5 +120,12 @@ console.log(
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
-
+const giveMeRandom = function (n) {
+  const nn = [];
+  for (let i = 0; i < n; i++) {
+    nn.push(Math.floor(Math.random() * 11)); // Genera numeri casuali tra 0 e 10
+  }
+  return nn;
+};
+console.log("DA N A RANDOM:", giveMeRandom(5));
 /* SCRIVI QUI LA TUA RISPOSTA */
